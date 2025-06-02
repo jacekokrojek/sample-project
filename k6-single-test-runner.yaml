@@ -1,0 +1,21 @@
+# k6-resource.yml
+
+apiVersion: k6.io/v1alpha1
+kind: TestRun
+metadata:
+  name: k6-sample
+spec:
+  parallelism: 1
+  script:
+    configMap:
+      name: test-scripts
+      file: svg-download-test.js
+  separate: false
+  runner:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 1000Mi
+      requests:
+        cpu: 100m
+        memory: 500Mi
