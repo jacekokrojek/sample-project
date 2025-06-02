@@ -11,10 +11,13 @@ spec:
       name: test-scripts
       file: svg-download-test.js
   separate: false
+  arguments: --summary-mode="full"
   runner:
     env:
       - name: K6_OUT
         value: experimental-prometheus-rw
+      - name: BASE_URL
+        value: 18.153.7.27
     envFrom:
      - configMapRef:
          name: prometheus-config
