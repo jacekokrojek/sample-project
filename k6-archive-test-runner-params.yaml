@@ -1,5 +1,3 @@
-# k6-resource.yml
-
 apiVersion: k6.io/v1alpha1
 kind: TestRun
 metadata:
@@ -9,9 +7,9 @@ spec:
   script:
     configMap:
       name: test-scripts
-      file: svg-download-test.js
+      file: archive.tar
   separate: false
-  arguments: --summary-mode="full"
+  arguments: --summary-mode=full
   runner:
     env:
       - name: K6_OUT
